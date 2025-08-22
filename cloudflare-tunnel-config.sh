@@ -29,7 +29,7 @@ fi
 USUARIO=$1
 DOMINIO=$2
 TUNNEL_NAME="tunel-$USUARIO"
-WORK_DIR="./tunnels/$USUARIO"
+WORK_DIR="./$USUARIO"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 
 # Banner

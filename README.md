@@ -194,7 +194,7 @@ ls -la ~/.cloudflared/cert.pem
 
 ```bash
 # Baixar o script de configuração
-wget https://raw.githubusercontent.com/seu-repo/cloudflare-tunnel-config.sh
+wget https://github.com/richarddaros/cloudflared-tunnel/blob/main/cloudflare-tunnel-config.sh
 
 # Dar permissão de execução
 chmod +x cloudflare-tunnel-config.sh
@@ -443,39 +443,7 @@ cloudflared tunnel run meu-tunnel
 # Ctrl+C para parar
 ```
 
-### Modo 2: Background com nohup
-
-```bash
-# Iniciar em background
-nohup cloudflared tunnel run meu-tunnel > ~/tunnel.log 2>&1 &
-
-# Ver logs
-tail -f ~/tunnel.log
-
-# Parar
-pkill cloudflared
-```
-
-### Modo 3: Com screen/tmux
-
-```bash
-# Criar sessão screen
-screen -S tunnel
-
-# Dentro do screen
-cloudflared tunnel run meu-tunnel
-
-# Sair do screen (mantém rodando)
-Ctrl+A, D
-
-# Voltar ao screen
-screen -r tunnel
-
-# Listar screens
-screen -ls
-```
-
-### Modo 4: Systemd Service (Produção) ⭐ RECOMENDADO
+### Systemd Service (Produção) ⭐
 
 ```bash
 # Instalar como serviço
